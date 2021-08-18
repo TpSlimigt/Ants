@@ -46,7 +46,6 @@ public class Ant : MonoBehaviour
             angle = Mathf.Atan2(desiredDirection.y, desiredDirection.x) * Mathf.Rad2Deg;
         }
 
-
         //Updates position and rotation of the ant
         transform.SetPositionAndRotation(transform.position += position, Quaternion.Euler(0, 0, angle - 90));
     }
