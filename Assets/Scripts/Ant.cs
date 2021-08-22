@@ -60,9 +60,8 @@ public class Ant : MonoBehaviour
         {
             if (hit.transform.name == "FoodPrefab")
             {
-
+                followFood = true;
             }
-            followFood = true;
             //Debug.Log(hit.transform.name);
         }
     }
