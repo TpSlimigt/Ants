@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0d1ce1a35823ba44a754c8f6412cb37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  antsToSpawn: 1
+  antsToSpawn: 100
   antSprite: {fileID: 21300000, guid: 3d0a29f950065b7409623d81bbedeb48, type: 3}
   foodTarget: {fileID: 1361609379}
 --- !u!4 &1086047221

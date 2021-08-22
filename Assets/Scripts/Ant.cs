@@ -17,6 +17,8 @@ public class Ant : MonoBehaviour
     public Food target;
     public bool followFood;
 
+    private Ray ray;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,5 +50,20 @@ public class Ant : MonoBehaviour
 
         //Updates position and rotation of the ant
         transform.SetPositionAndRotation(transform.position += position, Quaternion.Euler(0, 0, angle - 90));
+
+        ray = new Ray(transform.position, transform.up);
+        Debug.DrawRay(transform.position, transform.up, Color.red);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 2))
+        {
+            if (hit.transform.name == "FoodPrefab")
+            {
+
+            }
+            followFood = true;
+            //Debug.Log(hit.transform.name);
+        }
     }
 }
