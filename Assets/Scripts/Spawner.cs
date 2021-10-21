@@ -8,8 +8,7 @@ public class Spawner : MonoBehaviour
     public int antsToSpawn = 10;
     private List<GameObject> antList;
 
-    public Sprite antSprite;
-    public GameObject foodTarget;
+    public GameObject antPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -18,12 +17,9 @@ public class Spawner : MonoBehaviour
 
         for (int i = 0; i < antsToSpawn; i++)
         {
-            var spawnedAnt = new GameObject("Ant " + (i + 1));
-            spawnedAnt.transform.position = transform.position;
-            var ant = spawnedAnt.AddComponent<Ant>();
-            ant.target = foodTarget;
-            var sr = spawnedAnt.AddComponent<SpriteRenderer>();
-            sr.sprite = antSprite;
+            var spawnedAnt = Instantiate(antPrefab, transform.position, Quaternion.identity);//new GameObject("Ant " + (i + 1));
+            spawnedAnt.name = "Ant " + (i + 1);
+            spawnedAnt.transform.parent = transform;
             antList.Add(spawnedAnt);
         }
         Debug.Log("Ant list: " + antList.Count);

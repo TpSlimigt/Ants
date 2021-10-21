@@ -280,8 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antsToSpawn: 100
-  antSprite: {fileID: 21300000, guid: 3d0a29f950065b7409623d81bbedeb48, type: 3}
-  foodTarget: {fileID: 7278292484363466996, guid: 491a91c7958839a4593f4fa6b89ac9aa, type: 3}
+  antPrefab: {fileID: 5950633001859882722, guid: bd720f86e2de070438fe17cd35ec240d, type: 3}
 --- !u!4 &1086047221
 Transform:
   m_ObjectHideFlags: 0
@@ -326,8 +325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antsToSpawn: 100
-  antSprite: {fileID: 21300000, guid: 3d0a29f950065b7409623d81bbedeb48, type: 3}
-  foodTarget: {fileID: 7278292484363466996, guid: 491a91c7958839a4593f4fa6b89ac9aa, type: 3}
+  antPrefab: {fileID: 5950633001859882722, guid: bd720f86e2de070438fe17cd35ec240d, type: 3}
 --- !u!4 &1403433409
 Transform:
   m_ObjectHideFlags: 0
@@ -372,8 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antsToSpawn: 100
-  antSprite: {fileID: 21300000, guid: 3d0a29f950065b7409623d81bbedeb48, type: 3}
-  foodTarget: {fileID: 7278292484363466996, guid: 491a91c7958839a4593f4fa6b89ac9aa, type: 3}
+  antPrefab: {fileID: 5950633001859882722, guid: bd720f86e2de070438fe17cd35ec240d, type: 3}
 --- !u!4 &1490060172
 Transform:
   m_ObjectHideFlags: 0
@@ -418,8 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antsToSpawn: 100
-  antSprite: {fileID: 21300000, guid: 3d0a29f950065b7409623d81bbedeb48, type: 3}
-  foodTarget: {fileID: 7278292484363466996, guid: 491a91c7958839a4593f4fa6b89ac9aa, type: 3}
+  antPrefab: {fileID: 5950633001859882722, guid: bd720f86e2de070438fe17cd35ec240d, type: 3}
 --- !u!4 &1527927077
 Transform:
   m_ObjectHideFlags: 0
@@ -464,8 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antsToSpawn: 100
-  antSprite: {fileID: 21300000, guid: 3d0a29f950065b7409623d81bbedeb48, type: 3}
-  foodTarget: {fileID: 7278292484363466996, guid: 491a91c7958839a4593f4fa6b89ac9aa, type: 3}
+  antPrefab: {fileID: 5950633001859882722, guid: bd720f86e2de070438fe17cd35ec240d, type: 3}
 --- !u!4 &1721620271
 Transform:
   m_ObjectHideFlags: 0
