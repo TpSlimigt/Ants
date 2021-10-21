@@ -14,7 +14,7 @@ public class Ant : MonoBehaviour
     private Vector3 desiredDirection;
     private Vector3 currentDirection;
 
-    public Food target;
+    public GameObject target;
     public bool followFood;
 
     private Ray ray;
@@ -58,11 +58,13 @@ public class Ant : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 2))
         {
-            if (hit.transform.name == "FoodPrefab")
+            //Debug.Log(hit);
+            if (hit.transform.CompareTag("Food"))
             {
+                Debug.Log("Food hit");
+                target = hit.transform.gameObject;
                 followFood = true;
             }
-            //Debug.Log(hit.transform.name);
         }
     }
 }

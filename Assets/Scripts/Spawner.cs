@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     private List<GameObject> antList;
 
     public Sprite antSprite;
-    public Food foodTarget;
+    public GameObject foodTarget;
 
     // Start is called before the first frame update
     void Start()

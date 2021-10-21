@@ -15,7 +15,7 @@ public class Food : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector3(mousePos.x, mousePos.y, 0);
+        //mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //transform.position = new Vector3(mousePos.x, mousePos.y, 0);
     }
 }
