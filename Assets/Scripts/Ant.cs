@@ -19,8 +19,13 @@ public class Ant : MonoBehaviour
     // Food variables
     public GameObject target;
     private int foodCount;
+    public int foodHeld;
     public bool followFood;
     public bool addedToList;
+
+    // Home variables
+    public Vector3 homePos;
+    public GameObject homeObject;
 
     // Raycast
     private Ray ray;
@@ -34,6 +39,7 @@ public class Ant : MonoBehaviour
         followFood = false;
         addedToList = false;
         foodCount = 0;
+        foodHeld = 0;
     }
 
     // Update is called once per frame
@@ -48,6 +54,13 @@ public class Ant : MonoBehaviour
         {
             //Direction towards target
             direction = (target.transform.position - transform.position).normalized;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            position = direction * speed * Time.deltaTime;
+        }
+        else if (foodHeld > 0 && !followFood)
+        {
+            // Direction towards home
+            direction = (homePos - transform.position).normalized;
             angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             position = direction * speed * Time.deltaTime;
         }
@@ -85,7 +98,7 @@ public class Ant : MonoBehaviour
             }
         }
     }
-    // Called when ant is colliding with trigger volume (food).
+    // Called when ant is colliding with trigger volume (food/home).
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == target)
@@ -93,7 +106,13 @@ public class Ant : MonoBehaviour
             target.GetComponent<Food>().FoodEaten();
             followFood = false;
             foodCount += 1;
+            foodHeld += 1;
             gameObject.name = "Ant, eaten: " + foodCount;
+        }
+        else if (other.gameObject == homeObject && other.gameObject.transform.position == homePos)
+        {
+            other.gameObject.GetComponent<Spawner>().OnFoodCollected(foodHeld);
+            foodHeld = 0;
         }
     }
 }

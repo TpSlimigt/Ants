@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    [Range(0, 5)]
+    public float zoomSensitivity = 1f;
+    private int zoomMultiplier;
     //int foodName = 1;
     public GameObject foodPrefab;
     private Vector3 mousePos;
@@ -11,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        zoomMultiplier = 1;
     }
 
     // Update is called once per frame
@@ -31,6 +34,25 @@ public class PlayerManager : MonoBehaviour
                 //Debug.Log(mousePos);
             }
             //GameObject spawnedFood = new GameObject("Food " + foodName);
+        }
+
+        // Camera zoom
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                zoomMultiplier = 5;
+            }
+            else
+            {
+                zoomMultiplier = 1;
+            }
+            Camera.main.orthographicSize -= Input.GetAxis("Mouse ScrollWheel") * zoomSensitivity * zoomMultiplier;
+            
+            if (Camera.main.orthographicSize < 1)
+            {
+                Camera.main.orthographicSize = 1;
+            }
         }
     }
 }
